@@ -100,7 +100,7 @@ def matrixTask1():
     t = np.full((5,5), 0)
     t[:,0:5:4] = [[1]]
     t[0:5:4] = [[1]]
-    t[0,4] = [[9]]
+    t[[2],[2]] = [9]
     print(t)
 
 matrixTask1()
