@@ -4,12 +4,13 @@ import os
 import sys
 import numpy as np
 
+a = np.array([1, 2, 3], dtype = "int16")
+# print("a array: {}".format(a))
+b = np.array([[9.0, 8.0, 7.0], [6.0, 5.0, 4.0]])
+# print("b array:\n{}\n".format(b))
+
 # basics
 def basics():
-    a = np.array([1, 2, 3], dtype = "int16")
-    print("a array: {}".format(a))
-    b = np.array([[9.0, 8.0, 7.0], [6.0, 5.0, 4.0]])
-    print("b array:\n{}\n".format(b))
 
     # get dimensions
     print("number of dimensions of a: {}".format(a.ndim))
@@ -63,4 +64,43 @@ def basic_modifing():
     # ^ but this time it's column
     print("first column in 3d array b:\n{}\n".format(b[:,:,0:1:1]))
 
-basic_modifing()
+    # replacing
+    b[:,1,:] = [[1,3],[3,7]]
+    print("replaced 2nd and 4th row in b:\n{}\n".format(b[:,1,:]))
+
+def initializing():
+    # all 0s matrix
+    print("matrix full of zeros:\n{}\n".format(np.zeros((2,3))))
+
+    # all 1s matrix
+    print("matrix full of ones:\n{}\n".format(np.ones((3,2))))
+
+    # any other number
+    print("matrix full of custom numbers:\n{}\n".format(np.full((2,2), 69)))
+
+    # any other number (full_like)
+    print("replaces array with certain number:\n{}\n".format(np.full_like(a, 4)))
+
+    # random decimal numbers
+    print("matrix filled with random numbers:\n{}\n".format(np.random.rand(4,2)))
+
+    # random integer values
+    print("matrix filled with random integers:\n{}\n".format(np.random.randint(7, size=(3,3))))
+
+    # the identity matrix
+    print("the identity matrix:\n{}\n".format(np.identity(5)))
+
+    #repeat an array
+    arr = np.array([[1,2,3]])
+    r1 = np.repeat(arr,3, axis=0)
+    print("repeat an array:\n{}\n".format(r1))
+
+    #matrix task #1
+def matrixTask1():
+    t = np.full((5,5), 0)
+    t[:,0:5:4] = [[1]]
+    t[0:5:4] = [[1]]
+    t[0,4] = [[9]]
+    print(t)
+
+matrixTask1()
