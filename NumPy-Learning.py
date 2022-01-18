@@ -155,4 +155,27 @@ def mathematics():
 
     #sum of all values in stats
     print("summed values in stats array:\n{}\n".format(np.sum(stats)))
-    
+
+def reorganizing():
+
+    #reshaping arrays
+    before = np.array([[1, 2, 3, 4], [5, 6, 7, 8]])
+    print("before array shape:\n{}\n".format(before.shape))
+    after = before.reshape((8,1))
+    print("after array shape:\n{}\n".format(after.shape))
+
+    #vertically stacking vectors
+    v1 = np.array([1, 2, 3, 4])
+    v2 = np.array([5, 6, 7, 8])
+    print("v1 array:\n{}\n".format(v1))
+    print("v2 array:\n{}\n".format(v2))
+
+    print("vertically stacked arrays v1 and v2:\n{}\n".format(np.vstack([v1,v2, v2])))
+
+    #horizontally stacking vectors
+    h1 = np.ones((2,4))
+    h2 = np.zeros((2,2))
+    print("h1 array:\n{}\n".format(h1))
+    print("h2 array:\n{}\n".format(h2))
+
+    print("horizontally stacked arrays h1 and h2:\n{}\n".format(np.hstack([h1,h2])))
