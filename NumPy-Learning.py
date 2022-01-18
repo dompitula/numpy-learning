@@ -4,9 +4,9 @@ import os
 import sys
 import numpy as np
 
-a = np.array([1, 2, 3], dtype = "int16")
+# a = np.array([1, 2, 3], dtype = "int16")
 # print("a array: {}".format(a))
-b = np.array([[9.0, 8.0, 7.0], [6.0, 5.0, 4.0]])
+# b = np.array([[9.0, 8.0, 7.0], [6.0, 5.0, 4.0]])
 # print("b array:\n{}\n".format(b))
 
 # basics
@@ -103,4 +103,56 @@ def matrixTask1():
     t[[2],[2]] = [9]
     print(t)
 
-matrixTask1()
+def mathematics():
+    a = np.array([1, 2, 3, 4])
+    b = np.array([1, 0, 1, 0])
+    print("a array:\n{}\n".format(a))
+    print("b array:\n{}\n".format(b))
+
+    # Basics
+
+    #addition
+    print("a addition:\n{}\n".format(a + 2))
+
+    #subtraction
+    print("a subtraction:\n{}\n".format(a - 1))
+
+    #multiplication
+    print("a multiplication:\n{}\n".format(a * 2))
+
+    #division
+    print("a division:\n{}\n".format(a / 2))
+
+    #sin
+    print("sin(a):\n{}\n".format(np.sin(a)))
+
+    #cos
+    print("cos(a):\n{}\n".format(np.cos(a)))
+
+    # Linear Algebra
+
+    c = np.ones((2,3))
+    d = np.full((3,2),2)
+    print("c matrix:\n{}\n".format(c))
+    print("d matrix:\n{}\n".format(d))
+
+    #multiply matrixes
+    print("c matrix multiplied by d matrix:\n{}\n".format(np.matmul(c,d)))
+
+    #find the determinant
+    e = np.identity(3)
+    print("determinant of e matrix of identity 3:\n{}\n".format(np.linalg.det(e)))
+
+    # Statistics
+
+    stats = np.array([[1, 2, 3], [4, 5, 6]])
+
+    #min value in stats
+    print("minimum value in stats array, axis 0:\n{}\n".format(np.min(stats,axis=0)))
+
+    #max value in stats
+    print("maximum value in stats array:\n{}\n".format(np.max(stats)))
+
+    #sum of all values in stats
+    print("summed values in stats array:\n{}\n".format(np.sum(stats)))
+    
